@@ -309,3 +309,17 @@ html.no-rv .rv{opacity:1!important;transform:none!important}
 
 @media(prefers-reduced-motion:reduce){.rowend .dis{display:none}}
 html:not(.js) .rowend .dis{display:none}
+
+/* rev8: loader + caption toggle */
+.loader{display:none;position:fixed;inset:0;z-index:200;background:#f1f0ea;color:#1b1bf2;flex-direction:column;justify-content:space-between;padding:22px var(--pad) 0;touch-action:none}
+html.js:not(.loaded) .loader{display:flex}
+html.js:not(.loaded),html.js:not(.loaded) body{overflow:hidden}
+.ld-top{display:flex;justify-content:space-between}
+.ld-num{font-family:"Instrument Serif",serif;font-size:clamp(120px,26vw,420px);line-height:.8;letter-spacing:-.03em;display:flex;align-items:flex-start;margin-bottom:clamp(14px,2.4vw,34px)}
+.ld-num .pct{font-size:.32em;margin-left:.06em;margin-top:.12em}
+.ld-bar{position:relative;height:6px;margin:0 calc(-1 * var(--pad));background:rgba(27,27,242,.14)}
+.ld-bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#1b1bf2}
+.loader.fade{opacity:0;transition:opacity .5s}
+.pc figcaption{transition:opacity .3s}
+.pc.nocap figcaption{opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.pc figcaption{transition:none}}
