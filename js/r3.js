@@ -78,4 +78,4 @@ box.addEventListener('click',close);addEventListener('keydown',function(e){if(e.
 document.querySelectorAll('.vidcover video').forEach(function(v){var c=v.closest('.vidcover');v.addEventListener('play',function(){c.classList.add('playing')});v.addEventListener('pause',function(){c.classList.remove('playing')})});
 
 /* goatcounter: Get in Touch click */
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pill.cta');if(a&&window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:'get-in-touch',title:'Get in Touch click',event:true})});
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('.pill.cta, a[href^="mailto:"]');if(!t||!window.goatcounter||!window.goatcounter.count)return;var m=t.matches('a[href^="mailto:"]');window.goatcounter.count({path:m?'email-click':'get-in-touch',title:m?'Email click':'Get in Touch click',event:true})});
