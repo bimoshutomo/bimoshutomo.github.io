@@ -70,6 +70,9 @@ document.querySelectorAll('.pc video').forEach(function(v){var c=v.closest('.pc'
 var img=box.querySelector('img'),last=null;
 function open(c){var s=c.querySelector('.col');if(!s)return;last=c;img.src=c.getAttribute('data-full')||s.currentSrc||s.src;img.alt=s.alt||'';box.classList.add('open');de.classList.add('lb-lock');requestAnimationFrame(function(){box.classList.add('show')});box.querySelector('button').focus()}
 function close(){box.classList.remove('show');setTimeout(function(){box.classList.remove('open');de.classList.remove('lb-lock');img.removeAttribute('src');if(last)last.focus()},matchMedia('(prefers-reduced-motion:reduce)').matches?0:350)}
-document.querySelectorAll('.case .cover').forEach(function(c){c.addEventListener('click',function(){open(c)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(c)}})});
+document.querySelectorAll('.case .cover:not(.vidcover)').forEach(function(c){c.addEventListener('click',function(){open(c)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(c)}})});
 box.addEventListener('click',close);addEventListener('keydown',function(e){if(e.key==='Escape'&&box.classList.contains('open'))close()});
 })();
+
+/* vidcover-sync */
+document.querySelectorAll('.vidcover video').forEach(function(v){var c=v.closest('.vidcover');v.addEventListener('play',function(){c.classList.add('playing')});v.addEventListener('pause',function(){c.classList.remove('playing')})});
