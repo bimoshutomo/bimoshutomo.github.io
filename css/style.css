@@ -323,3 +323,15 @@ html.js:not(.loaded),html.js:not(.loaded) body{overflow:hidden}
 .pc figcaption{transition:opacity .3s}
 .pc.nocap figcaption{opacity:0;pointer-events:none}
 @media(prefers-reduced-motion:reduce){.pc figcaption{transition:none}}
+
+/* flicker fix: promote dither layers */
+.dis{transform:translateZ(0);backface-visibility:hidden;-webkit-backface-visibility:hidden;contain:paint}
+
+/* lightbox for case cover */
+.case .cover{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:150;background:rgba(14,14,120,.94);display:none;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px);cursor:zoom-out;opacity:0;transition:opacity .35s}
+.lb.open{display:flex}.lb.show{opacity:1}
+.lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border:1px solid #f1f0ea;background:#f1f0ea}
+.lb button{position:absolute;right:clamp(12px,2.4vw,28px);top:clamp(12px,2.4vw,28px);background:#f1f0ea;color:#1b1bf2;border:0;padding:8px 12px;font-family:"Space Mono",monospace;font-size:13px;cursor:pointer}
+html.lb-lock,html.lb-lock body{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.lb{transition:none}}
