@@ -335,3 +335,7 @@ html.js:not(.loaded),html.js:not(.loaded) body{overflow:hidden}
 .lb button{position:absolute;right:clamp(12px,2.4vw,28px);top:clamp(12px,2.4vw,28px);background:#f1f0ea;color:#1b1bf2;border:0;padding:8px 12px;font-family:"Space Mono",monospace;font-size:13px;cursor:pointer}
 html.lb-lock,html.lb-lock body{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.lb{transition:none}}
+
+/* keep poster text visible */
+.cover[data-full*="/p1-"] img,.cover[data-full*="/p5-"] img{top:0!important;height:100%!important;transform:none!important}
+@media(max-width:1000px){.case .cover{aspect-ratio:3/4}.cover img{top:0;height:100%;transform:none!important}}
