@@ -339,3 +339,6 @@ html.lb-lock,html.lb-lock body{overflow:hidden}
 /* keep poster text visible */
 .cover[data-full*="/p1-"] img,.cover[data-full*="/p5-"] img{top:0!important;height:100%!important;transform:none!important}
 @media(max-width:1000px){.case .cover{aspect-ratio:3/4}.cover img{top:0;height:100%;transform:none!important}}
+
+.mcol{min-width:0}.postlink{display:inline-flex;gap:10px;align-items:center;margin-top:22px;padding:10px 16px;border:1px solid #f1f0ea;color:#f1f0ea;text-decoration:none;font-size:13px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;transition:background .2s,color .2s}
+.postlink:hover,.postlink:focus-visible{background:#f1f0ea;color:#1b1bf2}
